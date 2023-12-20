@@ -1,0 +1,10 @@
+<app-test1
+    [incorrectAnswersCount]="incorrectAnswersCount"
+    [correctAnswersCount]="correctAnswersCount"
+    [difficultyLevel]="difficultyLevel"
+    [question]="question"
+    [title]="'Addition'"
+    (userSubmitAnswer)="handleCalculation($event)"
+    (userSetDifficultyLevel)="handleDifficultyChange($event)"
+>
+</app-test1>

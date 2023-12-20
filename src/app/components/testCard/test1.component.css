@@ -1,0 +1,15 @@
+:host ::ng-deep {
+
+  .p-card .p-card-body {
+    height: 70vh;
+  }
+
+  .p-card .p-card-content {
+    height: 100%;
+    width: 100%;
+  }
+
+  div .p-button {
+    width: 100%;
+  }
+}
