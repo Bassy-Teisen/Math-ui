@@ -1,61 +1,62 @@
-<div class="grid flex justify-content-center mt-7">
-    <!-- Difficulty Buttons Container -->
-    <div class="flex flex-column w-7rem gap-3 mr-3">
-        <p-button
-            size="small"
-            (click)="difficultyChange('easy')"
-            type="button"
-            label="easy"
-            class="p-button-success"
-        ></p-button>
-        <p-button
-            size="small"
-            (click)="difficultyChange('medium')"
-            type="button"
-            label="medium"
-            class="p-button-success"
-        ></p-button>
-        <p-button
-            size="small"
-            (click)="difficultyChange('hard')"
-            type="button"
-            label="hard"
-            class="p-button-success"
-        ></p-button>
+<div class="grid flex justify-content-center mt-7 w-full">
+    <div class="col-11 md:col-1 lg:col-1 flex lg:justify-content-end md:justify-content-end">
+        <div class="flex md:flex-column w-7rem gap-3 mr-3">
+            <p-button
+                size="small"
+                (click)="difficultyChange('easy')"
+                type="button"
+                label="easy"
+                class="p-button-success"
+            ></p-button>
+            <p-button
+                size="small"
+                (click)="difficultyChange('medium')"
+                type="button"
+                label="medium"
+                class="p-button-success"
+            ></p-button>
+            <p-button
+                size="small"
+                (click)="difficultyChange('hard')"
+                type="button"
+                label="hard"
+                class="p-button-success"
+            ></p-button>
+        </div>
     </div>
-
-    <!-- Card Container -->
-    <div class="flex flex-column w-7">
-        <p-card header="{{ title }}">
-            <div class="flex flex-column h-full w-full">
-                <form
-                    [formGroup]="testGroup"
-                    (ngSubmit)="onSubmit()"
-                    class="flex flex-column h-full"
-                >
-                    <div class="flex flex-column align-items-center m-3">
-                        <div class="flex flex-column">
-                            <label for="userAnswer" class="mb-2">{{ question }}</label>
-                            <input
-                                id="answerInput"
-                                pInputText
-                                pKeyFilter="int"
-                                type="text"
-                                formControlName="blah"
-                            />
-                            <div class="flex-grow-1 flex justify-content-end my-5">
-                                <p-button
-                                    type="submit"
-                                    label="Submit"
-                                    class="p-button-success"
-                                ></p-button>
+    <div class="col-11 md:col-8 lg:col-5 card-max">
+        <div class="flex flex-column">
+            <p-card header="{{ title }}">
+                <div class="flex flex-column h-full w-full">
+                    <form
+                        [formGroup]="testGroup"
+                        (ngSubmit)="onSubmit()"
+                        class="flex flex-column h-full"
+                    >
+                        <div class="flex flex-column align-items-center m-3">
+                            <div class="flex flex-column">
+                                <label for="userAnswer" class="mb-2">{{ question }}</label>
+                                <input
+                                    id="answerInput"
+                                    pInputText
+                                    pKeyFilter="int"
+                                    type="text"
+                                    formControlName="blah"
+                                />
+                                <div class="flex-grow-1 flex justify-content-end my-5">
+                                    <p-button
+                                        type="submit"
+                                        label="Submit"
+                                        class="p-button-success"
+                                    ></p-button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
-                <div>Correct Answers: {{ correctAnswersCount }}</div>
-                <div>Incorrect Answers: {{ incorrectAnswersCount }}</div>
-            </div>
-        </p-card>
+                    </form>
+                    <div>Correct Answers: {{ correctAnswersCount }}</div>
+                    <div>Incorrect Answers: {{ incorrectAnswersCount }}</div>
+                </div>
+            </p-card>
+        </div>
     </div>
 </div>

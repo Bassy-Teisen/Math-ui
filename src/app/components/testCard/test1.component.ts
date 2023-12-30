@@ -35,5 +35,6 @@ export class Test1Component implements OnInit {
         const userAnswer = this.testGroup.get('blah')?.value;
 
         this.userSubmitAnswer.emit((this.userAnswer = userAnswer));
+        this.testGroup.reset('')
     }
 }
