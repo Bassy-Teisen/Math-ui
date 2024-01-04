@@ -11,10 +11,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-import { AddComponent } from './components/tests/add/add.component';
-import { SubtractComponent } from './components/tests/subtract/subtract.component';
-import { DivideComponent } from './components/tests/divide/divide.component';
-import { DifferentialComponent } from './components/tests/differential/differential.component';
+import { AddComponent } from './components/challenges/add/add.component';
+import { SubtractComponent } from './components/challenges/subtract/subtract.component';
+import { DivideComponent } from './components/challenges/divide/divide.component';
+import { DifferentialComponent } from './components/challenges/differential/differential.component';
 @NgModule({
   declarations: [
     AppComponent,
