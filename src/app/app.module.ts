@@ -15,27 +15,33 @@ import { AddComponent } from './components/challenges/add/add.component';
 import { SubtractComponent } from './components/challenges/subtract/subtract.component';
 import { DivideComponent } from './components/challenges/divide/divide.component';
 import { DifferentialComponent } from './components/challenges/differential/differential.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
+import { TableModule } from 'primeng/table';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    LoginComponent,
-    Test1Component,
-    AddComponent,
-    SubtractComponent,
-    DivideComponent,
-    DifferentialComponent
-  ],
-  imports: [
-    BrowserModule,
-    ButtonModule,
-    AppRoutingModule,
-    CardModule,
-    ReactiveFormsModule,
-    InputTextModule,
-    KeyFilterModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        DashboardComponent,
+        LoginComponent,
+        Test1Component,
+        AddComponent,
+        SubtractComponent,
+        DivideComponent,
+        DifferentialComponent,
+        LeaderboardComponent,
+    ],
+    imports: [
+        HttpClientModule,
+        TableModule,
+        BrowserModule,
+        ButtonModule,
+        AppRoutingModule,
+        CardModule,
+        ReactiveFormsModule,
+        InputTextModule,
+        KeyFilterModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

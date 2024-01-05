@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ScoreService } from 'src/app/services/score.service';
+import { Router, NavigationStart, Event as RouterEvent } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 enum Difficulty {
     easy = 10,
@@ -19,7 +22,19 @@ export class AddComponent implements OnInit {
     incorrectAnswersCount: number = 0;
     correctAnswersCount: number = 0;
 
-    constructor() {}
+    constructor(private router: Router, private scoreService: ScoreService) {
+        this.router.events
+            .pipe(
+                filter(
+                    (event: RouterEvent): event is NavigationStart =>
+                        event instanceof NavigationStart,
+                ),
+            )
+            .subscribe((event: NavigationStart) => {
+                console.log('Navigation started to: ' + event.url);
+                this.saveScore();
+            });
+    }
 
     ngOnInit(): void {
         this.additionQuestion();
@@ -89,5 +104,13 @@ export class AddComponent implements OnInit {
         }
 
         return Math.floor(Math.random() * maxNumber);
+    }
+
+    saveScore(): void {
+        const scoreData = { user: 'UserName', score: this.correctAnswersCount };
+        this.scoreService.saveScore(scoreData).subscribe({
+            next: (response) => console.log('Score saved!', response),
+            error: (error) => console.error('Error saving score', error),
+        });
     }
 }
